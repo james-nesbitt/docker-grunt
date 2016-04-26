@@ -11,5 +11,5 @@ GRUNT_PATH=$1
 docker run --rm -t -i \
   --volume=$(pwd)/${GRUNT_PATH}:/app/project \
   -w=/app/project \
-  hy_doo-grunt
+  grunt-watch
 
