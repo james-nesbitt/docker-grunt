@@ -14,15 +14,12 @@ RUN /usr/bin/yum install --assumeyes --verbose nodejs npm
 RUN /usr/bin/npm install grunt-cli -g
 RUN /usr/bin/npm install grunt -g
 
-# not sure if this is necessary
-RUN /usr/bin/npm update --save-dev
+# Add an entrypoint script for run-time
+RUN entrypoint.sh /app/entrypoint.sh
 
 # Get a non-root user to run grunt, by default using the watch operation
 #
 # What you need here is a user with uid 1000, which likely matches your OSX uid
 USER app
 # This image always runs "grunt"
-ENTRYPOINT ["grunt"]
-# this CMD can be overriden on command line if you have other operations you may use
-CMD ["watch"]
-
+ENTRYPOINT ["/app/entrypoint.sh"]
