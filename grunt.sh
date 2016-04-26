@@ -11,7 +11,7 @@ if [ -z "${1}" ]; then
 	exit 1
 fi
 
-GRUNT_PATH=$(pwd)/$1
+GRUNT_PATH="$(pwd)/$1"
 
 if [ ! -d "${GRUNT_PATH}" ]; then
 	echo "No valid path was provided: ${GRUNT_PATH} does not exist"
