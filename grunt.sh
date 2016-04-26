@@ -6,10 +6,10 @@
 #  * the rest is as defined in the image (see Dockerfile)
 #
 
-GRUNT_PATH=$1
+GRUNT_PATH=$(pwd)/$1
 
 docker run --rm -t -i \
-  --volume=$(pwd)/${GRUNT_PATH}:/app/project \
+  --volume=${GRUNT_PATH}:/app/project \
   -w=/app/project \
   grunt-watch
 
