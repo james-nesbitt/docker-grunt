@@ -10,7 +10,12 @@ first build the image:
 ````
 ./grunt-build.sh
 ````
-Then run the tool
+
+Then copy the grunt.sh to your grunt folder and run it
 ````
-./grunt.sh ${path_to_where_the_sass_is}
+./grunt.sh
 ````
+
+## Requirements
+
+Right now the grunt.js script checks to see if you have a Gruntfile.js in your compile path

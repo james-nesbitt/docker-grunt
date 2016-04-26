@@ -6,17 +6,9 @@
 #  * the rest is as defined in the image (see Dockerfile)
 #
 
-if [ -z "${1}" ]; then
-	echo "usage: grunt.sh {PATH}"
-	exit 1
-fi
 
-GRUNT_PATH="$(pwd)/$1"
+GRUNT_PATH="$(pwd)"
 
-if [ ! -d "${GRUNT_PATH}" ]; then
-	echo "No valid path was provided: ${GRUNT_PATH} does not exist"
-	exit 1
-fi
 if [ ! -f "${GRUNT_PATH}/Gruntfile.js" ]; then
 	echo "No gruntfile found in provided path.  Expected: ${GRUNT_PATH}/Gruntfile.js"
 	exit 1
