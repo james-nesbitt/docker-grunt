@@ -19,6 +19,9 @@ RUN /usr/bin/npm update --save-dev
 
 # Get a non-root user to run grunt, by default using the watch operation
 #
-USER app                 # What you need here is a user with uid 1000, which likely matches your OSX uid
-ENTRYPOINT ["grunt"]     # This image always runs "grunt"
-CMD ["watch"]            # this CMD can be overriden on command line if you have other operations you may use
+USER app
+# This image always runs "grunt"
+ENTRYPOINT ["grunt"]
+# this CMD can be overriden on command line if you have other operations you may use
+CMD ["watch"]
+
