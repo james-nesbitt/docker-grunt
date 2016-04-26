@@ -6,7 +6,10 @@
 #  * the rest is as defined in the image (see Dockerfile)
 #
 
+GRUNT_PATH=$1
+
 docker run --rm -t -i \
-  --volume=$(pwd)/app/project/themes/hy_doo:/app/project \
+  --volume=$(pwd)/${GRUNT_PATH}:/app/project \
   -w=/app/project \
   hy_doo-grunt
+
